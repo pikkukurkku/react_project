@@ -1,0 +1,18 @@
+.hike {
+    border: 1px solid blue;
+    border-radius: 10px;
+    background-color: beige;
+    width: 300px;
+    margin: 40px 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.all-hikes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

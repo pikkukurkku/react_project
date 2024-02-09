@@ -1,25 +1,39 @@
 nav {
+  display: flex; /* Use flexbox layout */
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  align-items: center; /* Center items vertically */
   background-color: #711eaa;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100vw;
   color: white;
-  height: 100px;
-  position: relative;
+  padding: 10px 0 20px 0;
+}
+
+.left {
+  display: flex; /* Use flexbox layout for the left section */
+  align-items: center; /* Center items vertically */
+}
+
+.right {
+  display: flex; /* Use flexbox layout for the right section */
+  flex-direction: row;
+  margin-right: 30px;
+  font-size: 18px;
+}
+
+/* Style the image for the menu icon */
+.left img:first-child {
+  margin-left: 30px;
+  margin-right: 30px; /* Add spacing between the menu icon and the logo */
 }
 
 .logo {
-  position: absolute;
-  top: 20px;
+  width: 130px;
 }
 
-img {
-    width: 100px;
+.help {
+  margin-right: 30px;
+
 }
 
-.left, .right {
-    display: flex;
-    flex-direction: row;
-   
+.menu {
+  width: 50px
 }

@@ -1,7 +1,11 @@
+import "./footer.css"
+
 function Footer () {
     return (
-        <footer>
+        <footer className="footer">
             <p>Contact us</p>
+            <p>Jobs</p>
+            <p>Join the community</p>
         </footer>
     )
 }

@@ -1,42 +1,48 @@
-import { Link } from "react-router-dom";
+
 import { useState, useEffect } from "react";
-// import beersJSON from "./../assets/beers.json";
 import axios from "axios";
+import "./AllHikes.css"
 
-const BE_URL = "https://json-server.adaptable.app/hikes"
+const BE_URL = "https://json-server.adaptable.app/hikes";
 
-function AllHikes () {
-    const [hikes, setHikes] = useState([])
-    
+function AllHikes() {
+  const [hikes, setHikes] = useState([]);
 
-    function getAllHikes () {
-        axios
-        .get(BE_URL)
-        .then((response) => setHikes(response.data))
-        .catch((error) => console.log(error));
-    };
+  function getAllHikes() {
+    axios
+      .get(BE_URL)
+      .then((response) => setHikes(response.data))
+      .catch((error) => console.log(error));
+  }
 
-    useEffect(() => {
-        getAllHikes();
-    }, []);
+  useEffect(() => {
+    getAllHikes();
+  }, []);
 
-
-
-
-    return (
-        <div className="all-hikes">
-        {hikes && hikes.map((hike, i)=> {
-            return (
-                <div key={i}>
-                    <p>{hike.nameOfHike}</p>
-                    <p>{hike.nmountain.Range}</p>
-                </div>
-            )
+  return (
+    <>
+    <div className="all-hikes">
+     
+      {hikes &&
+        hikes.map((hike, i) => {
+          return (
+            <div className="hike" key={i}>
+              <p>{hike.nameOfHike}</p>
+              <p>{hike.mountainRange}</p>
+              <p>{hike.country}</p>
+              <p>{hike.hikeStartPoint}</p>
+              <p>{hike.time}</p>
+              <p>{hike.distance}</p>
+              <p>{hike.elevation}</p>
+              <p>{hike.uphill}</p>
+              <p>{hike.downhill}</p>
+              <p>{hike.description}</p>
+            </div>
+          );
         })}
-
-        </div>
-    )
+    </div>
+    </>
+  );
 }
 
 export default AllHikes;
-
