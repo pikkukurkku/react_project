@@ -1,0 +1,25 @@
+nav {
+  background-color: #711eaa;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100vw;
+  color: white;
+  height: 100px;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+}
+
+img {
+    width: 100px;
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: row;
+   
+}
