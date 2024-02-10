@@ -1,0 +1,29 @@
+.oneHike {
+  border: 1px solid blue;
+  border-radius: 10px;
+  background-color: beige;
+  width: 300px;
+  margin: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  text-decoration: none;
+  padding: 10px 25px;
+  font-size: 18px;
+}
+
+.all-hikes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.link {
+  text-decoration: none;
+}

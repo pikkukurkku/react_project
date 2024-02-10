@@ -1,15 +1,28 @@
 // App.jsx
 
-import './App.css';
-import Map from './components/map';
+import "./App.css";
+
+import Footer from "./components/Footer";
+import Navbar from "./components/navbar";
+import AllHikes from "./pages/AllHikes";
+import HikeDeets from "./pages/HikeDeets";
+import HomePage from "./pages/HomePage";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      
-      <h1>Hi NATALIA!</h1>
-      <Map latitude={47.4211} longitude={10.9854} />
-    </> 
+    <Navbar />
+      <Routes>
+       
+        <Route path="/hikes" element={<AllHikes />} />
+        <Route path="/hikes/:hikeId" element={<HikeDeets />} />
+        <Route path="/" element={<HomePage />} />
+        
+       
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
