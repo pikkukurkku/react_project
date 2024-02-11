@@ -3,7 +3,9 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Map from "../components/map";
+import Carousel from "../components/Carousel";
 import "./HikeDeets.css";
+import Reviews from "../components/Reviews"
 
 // import Reviews from "./reviews"
 import axios from "axios";
@@ -27,41 +29,76 @@ function HikeDeets() {
   }, [hikeId]);
 
   return (
+    
     <div className="main">
-      <h2>{hike.nameOfHike}</h2>
-      <img src="/public/images/mountain.jpg" alt="big-image-of-mountain" />
+      <h1>{hike.nameOfHike}</h1>
+      <Carousel />
       <div className="HikeCard">
         {hike && (
+          <div className="container">
           <div className="text">
-            <p>Mountain range: {hike.mountainRange}</p>
-            <p>County: {hike.country}</p>
-            <p>Start point: {hike.hikeStartPoint}</p>
-            <p>Time: {hike.time} h</p>
-            <p>Distance: {hike.distance} km</p>
-            <p>Elevation: {hike.elevation} m asl</p>
-            <p>Uphill: {hike.uphill}</p>
-            <p>Downhill: {hike.downhill}</p>
-            <p>Description:{hike.description}</p>
+            <p>
+              <b>Mountain range: </b>
+              {hike.mountainRange}
+            </p>
+            <p>
+              <b>County:</b> {hike.country}
+            </p>
+            <p>
+              <b>Start point:</b> {hike.hikeStartPoint}
+            </p>
+            <div className="data">
+              <p>
+                <b>Time:</b> {hike.time} h
+              </p>
+              <p>
+                <b>Distance:</b> {hike.distance} km
+              </p>
+              <p>
+                <b>Elevation:</b> {hike.elevation} m asl
+              </p>
+              <p>
+                <b>Uphill:</b> {hike.uphill}
+              </p>
+              <p>
+                <b>Downhill:</b> {hike.downhill}
+              </p>
+            </div>
+            <p className="description">
+              <b>Description:</b>
+              <br />
+              <br /> {hike.description}
+            </p>
+          </div>
           </div>
         )}
+        </div>
+        
 
-        <div className="map-container" style={{ height: "400px" }}>
-          {hike.latitude && hike.longitude && (
-            <Map
-              className="map"
-              latitude={hike.latitude}
-              longitude={hike.longitude}
-            />
-          )}
+          <div className="map-container" style={{ height: "400px" }}>
+            <p>
+              <b>Location on map:</b>
+            </p>
+            {hike.latitude && hike.longitude && (
+              <Map
+                className="map"
+                latitude={hike.latitude}
+                longitude={hike.longitude}
+              />
+            )}
+          </div>
+          <div className="userReviews">
+          <h2>Reviews</h2>
+          <br />
+          <Reviews />
+          <button className="addReview">Add your review</button>
         </div>
-        <div>
-          <h3>Reviews</h3>
-        </div>
-      </div>
+ 
       <Link to="/hikes">
-        <button className="btn btn-primary">Back</button>
+        <button className="btn">Back</button>
       </Link>
     </div>
+    
   );
 }
 
