@@ -19,7 +19,7 @@ function HikeDeets() {
 
   const getOneHike = () => {
     axios
-      .get(`${BE_URL}/${hikeId}`)
+      .get(`${BE_URL}/${hikeId}?=embed=images`)
       .then((response) => setHike(response.data))
       .catch((error) => console.log(error));
   };
@@ -86,17 +86,26 @@ function HikeDeets() {
                 longitude={hike.longitude}
               />
             )}
+            
           </div>
           <div className="userReviews">
           <h2>Reviews</h2>
           <br />
           <Reviews />
+          <Link to={`/hikes/${hikeId}/new-review`}>
           <button className="addReview">Add your review</button>
+        </Link>
+          
         </div>
  
       <Link to="/hikes">
         <button className="btn">Back</button>
       </Link>
+      
+      {hike.images && hike.images.length > 0 && (
+        <div>
+          <img src={hike.images[0].src} alt="Hike" />
+          </div>)}
     </div>
     
   );

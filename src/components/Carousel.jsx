@@ -3,6 +3,9 @@ import "./Carousel.css";
 
 function Carousel() {
   const data = ["1", "2", "3", "4"];
+  data[0] = (
+    <img className="firstPic" src="https://i.ibb.co/bg2rpTf/5736-ED3-C-47-D9-474-D-B4-C4-E3-CFE1927941.jpg" />
+  );
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const carouselInfiniteScroll = () => {
@@ -25,7 +28,7 @@ function Carousel() {
         return (
           <h1
             className="carousel-item"
-            style={{ transform: `translate(-${currentIndex * 100}%)` }}
+            style={{ transform: `translate(-${currentIndex * 100}%)`, width: "100%" }}
             key={index}
           >
             {item}
@@ -37,8 +40,6 @@ function Carousel() {
 }
 
 export default Carousel;
-
-
 
 // import { useState, useEffect } from "react";
 // import "./Carousel.css";
