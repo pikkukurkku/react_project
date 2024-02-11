@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="navbar">
         <Link to="/">
           <img
-            src="/public/images/HikeLove.webp"
+            src="/images/HikeLove.webp"
             alt="hiking-logo"
             className="logo"
           />

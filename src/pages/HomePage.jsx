@@ -11,7 +11,7 @@ function HomePage() {
     <div>
     <div className="homePage">
       <img
-        src="../public/images/mountain.jpg"
+        src="../images/mountain.jpg"
         alt="big-mountain-pic"
         className="big-mountain-pic" />
         <Link to="/hikes" className="Linktohikes">
