@@ -2,11 +2,11 @@
 
 import "./App.css";
 
-import Footer from "./components/Footer";
-import Navbar from "./components/navbar";
-import AllHikes from "./pages/AllHikes";
-import HikeDeets from "./pages/HikeDeets";
-import HomePage from "./pages/HomePage";
+import Footer from "/src/components/Footer";
+import Navbar from "/src/components/navbar";
+import AllHikes from "/src/pages/AllHikes";
+import HikeDeets from "/src/pages/HikeDeets";
+import HomePage from "/src/pages/HomePage";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -14,12 +14,9 @@ function App() {
     <>
     <Navbar />
       <Routes>
-       
+        <Route path="/" element={<HomePage />} />
         <Route path="/hikes" element={<AllHikes />} />
         <Route path="/hikes/:hikeId" element={<HikeDeets />} />
-        <Route path="/" element={<HomePage />} />
-        
-       
       </Routes>
       <Footer />
     </>
