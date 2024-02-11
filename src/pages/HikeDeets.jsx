@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Map from "../components/map";
+import Carousel from "../components/Carousel";
 import "./HikeDeets.css";
 
 // import Reviews from "./reviews"
@@ -29,6 +30,7 @@ function HikeDeets() {
   return (
     <div className="main">
       <h2>{hike.nameOfHike}</h2>
+      <Carousel />
       <img src="/public/images/mountain.jpg" alt="big-image-of-mountain" />
       <div className="HikeCard">
         {hike && (

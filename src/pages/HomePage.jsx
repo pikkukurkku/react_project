@@ -2,6 +2,7 @@
 import "./HomePage.css";
 import AppOfTheYear from "../components/AppOfTheYear";
 import { Link } from "react-router-dom";
+import AppDemo from "../components/AppDemo";
 // import AllHikes from "./AllHikes";
 
 function HomePage() {
@@ -17,6 +18,7 @@ function HomePage() {
         </Link>
       {/* <img src="/images/menu-white.avif" alt="big-image-of-mountain"></img> */}
       {/* <AllHikes /> */}
+      <AppDemo/>
       <AppOfTheYear />
     </div>
   );
