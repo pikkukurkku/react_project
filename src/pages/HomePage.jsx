@@ -1,4 +1,4 @@
-import Hikecard from "../components/Hikecard";
+
 import "./HomePage.css";
 import AppOfTheYear from "../components/AppOfTheYear";
 import { Link } from "react-router-dom";
@@ -9,7 +9,7 @@ function HomePage() {
   return (
     <div>
       <img
-        src="../src/images/mountain.jpg"
+        src="../public/images/mountain.jpg"
         alt="big-mountain-pic"
         className="big-mountain-pic" />
         <Link to="/hikes">
@@ -17,7 +17,6 @@ function HomePage() {
         </Link>
       {/* <img src="/images/menu-white.avif" alt="big-image-of-mountain"></img> */}
       {/* <AllHikes /> */}
-      {/* <Hikecard /> */}
       <AppOfTheYear />
     </div>
   );
