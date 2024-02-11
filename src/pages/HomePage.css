@@ -1,14 +1,28 @@
 
-
-
 .big-mountain-pic {
-    width: 100vw;
-    margin: 0;
+    width: 57vw;
+    margin-top: 50px;
 }
 
-.link {
-    font-size: 20px;
-    text-align: right;
-    margin-right: 60px;
-    margin-top: 30px;
+.links {
+    font-size: 22px;
+    text-align: center;
+    background-color: #407fca;
+    width: 200px;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
 }
+
+.Linktohikes {
+    text-decoration: none;
+}
+
+.homePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(143,54,204,0.1);
+}
+

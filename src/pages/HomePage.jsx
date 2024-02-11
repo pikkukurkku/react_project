@@ -9,17 +9,21 @@ function HomePage() {
   console.log("Hello from the Homepage");
   return (
     <div>
+    <div className="homePage">
       <img
         src="../public/images/mountain.jpg"
         alt="big-mountain-pic"
         className="big-mountain-pic" />
-        <Link to="/hikes">
-        <p className="link">Browse hikes...</p>
+        <Link to="/hikes" className="Linktohikes">
+        <p className="links">Browse hikes...</p>
+        
         </Link>
+        </div>
       {/* <img src="/images/menu-white.avif" alt="big-image-of-mountain"></img> */}
       {/* <AllHikes /> */}
       <AppDemo/>
       <AppOfTheYear />
+    
     </div>
   );
 }
