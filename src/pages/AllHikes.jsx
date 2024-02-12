@@ -29,7 +29,7 @@ function AllHikes() {
         hikes.map((hike, i) => {
           return (
             <div key={i}>
-            <Link to={"/hikes/" +  hike.id} className="link">
+            <Link to={`/hikes/${hike.id}`} className="link">
             <div className="oneHike">
               <p className="name">{hike.nameOfHike}</p>
               <p>Mountain range: {hike.mountainRange}</p>

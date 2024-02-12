@@ -1,51 +1,52 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-// const BE_URL = "https://json-server.adaptable.app/hikes";
 
-function NewReview(props) {
-  // State variables to store the values of the form inputs. You can leave these as they are.
+function EditReviewForm(props) {
   const [reviewer, setReviewer] = useState("");
   const [stars, setStars] = useState(0);
   const [reviewText, setReviewText] = useState("");
   // const [postedOn, setPostedOn] = useState("");
-
-  const { hikeId } = useParams();
-
-  const handleReviewer = (e) => setReviewer(e.target.value);
-  const handleStars = (e) => setStars(e.target.value);
-  const handleReviewText = (e) => setReviewText(e.target.value);
-  // const handlePostedOn = (e) => setPostedOn(e.target.value);
-
+  const { hikeId, reviewId } = useParams();
   const navigate = useNavigate();
 
-  const addNewReview = (event) => {
+  useEffect(() => {
+    axios
+      .get(`https://json-server.adaptable.app/reviews/${reviewId}`)
+      .then((response) => {
+        const reviewData = response.data;
+        console.log("Review Data:", reviewData);
+        setReviewer(reviewData.reviewer);
+        setStars(reviewData.stars);
+        setReviewText(reviewData.reviewText);
+      })
+      .catch((error) => console.error("Error fetching review data:", error));
+  }, [hikeId, reviewId]);
+
+  const handleEditReview = async (event) => {
     event.preventDefault();
     const requestBody = {
-      hikeId: Number(hikeId),
+    hikeId: Number(hikeId),
       reviewer,
       stars,
-      reviewText,
-      // postedOn,
+      reviewText
     };
 
-    console.log("Request Body:", requestBody);
+    try {
+      await axios.put(`https://json-server.adaptable.app/reviews/${reviewId}`, requestBody);
+      navigate(`/hikes/${hikeId}`);
+    } catch (error) {
+      console.error("Error updating review:", error);
+    }
+};
 
-    axios
-      .post(`https://json-server.adaptable.app/reviews`, requestBody)
-      .then((response) => {
-        console.log("Response:", response);
-        const newReviewId = response.data;
-        navigate(`/hikes/${hikeId}`);
-      })
-      .catch((error) => console.log(error));
-  };
+
+ 
 
   return (
-    <>
       <div className="d-inline-flex flex-column w-100 p-4">
-        <form onSubmit={addNewReview}>
+        <form onSubmit={handleEditReview}>
           <label>Name</label>
           <input
             className="form-control mb-4"
@@ -53,7 +54,7 @@ function NewReview(props) {
             name="name"
             placeholder="Your Name"
             value={reviewer}
-            onChange={handleReviewer}
+            onChange={(e) => setReviewer(e.target.value)}
           />
           <label>Stars</label>
           <input
@@ -61,7 +62,7 @@ function NewReview(props) {
             type="number"
             placeholder="Stars"
             value={stars}
-            onChange={handleStars}
+            onChange={(e) => setStars(e.target.value)}
           />
 
           <label className="form-label">Description</label>
@@ -72,7 +73,7 @@ function NewReview(props) {
             placeholder="Description"
             rows="3"
             value={reviewText}
-            onChange={handleReviewText}
+            onChange={(e) => setReviewText(e.target.value)}
           ></textarea>
 
           {/* <label>Posted on</label>
@@ -84,11 +85,11 @@ function NewReview(props) {
             onChange={handlePostedOn}
           /> */}
 
-          <button className="btn btn-primary btn-round">Add Review</button>
+          <button className="btn btn-primary btn-round">Update</button>
         </form>
+       
       </div>
-    </>
   );
 }
 
-export default NewReview;
+export default EditReviewForm;
