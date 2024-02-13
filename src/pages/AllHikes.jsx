@@ -2,24 +2,33 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./AllHikes.css"
+import Spinner from "../components/Spinner"
 
 const BE_URL = "https://json-server.adaptable.app/hikes";
 
 
 function AllHikes() {
   const [hikes, setHikes] = useState([]);
-
+  const [loading, setLoading] = useState(true);
 
   function getAllHikes() {
     axios
       .get(BE_URL)
-      .then((response) => setHikes(response.data))
-      .catch((error) => console.log(error));
+      .then((response) => {
+        setHikes(response.data);
+        setLoading(false); 
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false); 
+      });
   }
 
   useEffect(() => {
     getAllHikes();
   }, []);
+
+  if (loading) return <Spinner />;
 
   return (
     <>

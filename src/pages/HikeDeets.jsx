@@ -6,6 +6,7 @@ import Map from "../components/map";
 import Carousel from "../components/Carousel";
 import "./HikeDeets.css";
 import Reviews from "../components/reviews";
+import Spinner from "../components/Spinner"
 
 // import Reviews from "./reviews"
 import axios from "axios";
@@ -13,6 +14,7 @@ import axios from "axios";
 function HikeDeets() {
   const [hike, setHike] = useState({});
   const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const { hikeId } = useParams();
   console.log("anything");
@@ -23,16 +25,22 @@ function HikeDeets() {
       .get(`${BE_URL}/${hikeId}?_embed=images&_embed=reviews`)
       .then((response) => {
         console.log(response.data);
+        setLoading(false); 
         setHike(response.data);
-        setReviews(response.data.reviews || []);
+        setReviews(response.data.reviews || []);   
       })
-      .catch((error) => console.log(error));
-  };
+      .catch((error) => {
+        console.log(error);
+      setLoading(false); 
+  });
+};
 
   useEffect(() => {
     console.log("useEffect");
     getOneHike();
   }, [hikeId]);
+
+  if (loading) return <Spinner />;
 
   return (
     <div className="main">

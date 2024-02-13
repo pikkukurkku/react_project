@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import './reviews.css'
 
 function Reviews({ reviews: reviewsProp }) {
   const [reviews, setReviews] = useState([]);
@@ -42,13 +43,16 @@ function Reviews({ reviews: reviewsProp }) {
             <p className="stars">Stars: {review.stars}</p>
             <p className="reviewText">{review.reviewText}</p>
             <p className="postedOn">{`Posted on: ${review.postedOn}`}</p>
+            <div className="buttonDiv">
             <Link to={`/hikes/${review.hikeId}/reviews/${review.id}/edit`}>
+           
               <button className="editButton">Edit</button>
             </Link>
             <div>
-              <button onClick={() => handleDeleteReview(review.id)}>
+              <button className="deleteButton" onClick={() => handleDeleteReview(review.id)}>
                 Delete Review
               </button>
+              </div>
             </div>
             <br />
           </div>
