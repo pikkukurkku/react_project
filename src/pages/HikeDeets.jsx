@@ -6,34 +6,38 @@ import Map from "../components/map";
 import Carousel from "../components/Carousel";
 import "./HikeDeets.css";
 import Reviews from "../components/reviews";
-import Spinner from "../components/Spinner"
+import Spinner from "../components/Spinner";
 
 // import Reviews from "./reviews"
 import axios from "axios";
+import AccuWeather from "../components/AccuWeather";
 
 function HikeDeets() {
   const [hike, setHike] = useState({});
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [locationKey, setLocationKey] = useState(null);
   const navigate = useNavigate();
   const { hikeId } = useParams();
-  console.log("anything");
   const BE_URL = "https://json-server.adaptable.app/hikes";
 
   const getOneHike = () => {
     axios
-      .get(`${BE_URL}/${hikeId}?_embed=images&_embed=reviews`)
+      .get(
+        `${BE_URL}/${hikeId}?_embed=images&_embed=reviews`
+      )
       .then((response) => {
         console.log(response.data);
-        setLoading(false); 
+        setLoading(false);
         setHike(response.data);
-        setReviews(response.data.reviews || []);   
+        setReviews(response.data.reviews || []);
+        setLocationKey(response.data.locationKey);
       })
       .catch((error) => {
         console.log(error);
-      setLoading(false); 
-  });
-};
+        setLoading(false);
+      });
+  };
 
   useEffect(() => {
     console.log("useEffect");
@@ -99,6 +103,7 @@ function HikeDeets() {
           />
         )}
       </div>
+      <div>{locationKey && <AccuWeather locationKey={locationKey} />}</div>
       <div className="userReviews">
         <h2>Reviews</h2>
         <br />

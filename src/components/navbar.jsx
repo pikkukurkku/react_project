@@ -4,13 +4,9 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <nav className="navbar">
-        <Link to="/">
-          <img
-            src="/images/HikeLove.webp"
-            alt="hiking-logo"
-            className="logo"
-          />
-        </Link>
+      <Link to="/">
+        <img src="/images/HikeLove.webp" alt="hiking-logo" className="logo" />
+      </Link>
       <div className="right">
         <p className="help">Help</p>
         <p>Log In</p>
