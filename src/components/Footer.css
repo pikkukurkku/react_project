@@ -1,4 +1,16 @@
 .footer {
-    background-color: #8f36cc;
-    color: white;
+  background-color: #8f36cc;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  line-height: 1;
+  font-size: smaller;
+  margin-top: 100px;
+}
+
+section {
+  padding: 28px 45px;
 }

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import "./NewReview.css";
 
 // const BE_URL = "https://json-server.adaptable.app/hikes";
 
@@ -10,8 +11,18 @@ function NewReview(props) {
   const [stars, setStars] = useState(0);
   const [reviewText, setReviewText] = useState("");
   const [postedOn, setPostedOn] = useState("");
+  const [hike, setHike] = useState({});
 
   const { hikeId } = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`https://json-server.adaptable.app/hikes/${hikeId}`)
+      .then((response) => {
+        setHike(response.data);
+      })
+      .catch((error) => console.log(error));
+  }, [hikeId]);
 
   const handleReviewer = (e) => setReviewer(e.target.value);
   const handleStars = (e) => setStars(e.target.value);
@@ -20,22 +31,29 @@ function NewReview(props) {
 
   const navigate = useNavigate();
 
+  const formattedDate = new Date(postedOn).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "numeric",
+    year: "numeric",
+  });
+
   const addNewReview = (event) => {
     event.preventDefault();
     const requestBody = {
+      hikeId: Number(hikeId),
       reviewer,
       stars,
       reviewText,
-      postedOn,
+      postedOn: formattedDate,
     };
 
+    console.log("Request Body:", requestBody);
+
     axios
-      .post(
-        `https://json-server.adaptable.app/hikes/${hikeId}/reviews`,
-        requestBody
-      )
+      .post(`https://json-server.adaptable.app/reviews`, requestBody)
       .then((response) => {
-        const newReviewId = response.data._id;
+        console.log("Response:", response);
+        const newReviewId = response.data;
         navigate(`/hikes/${hikeId}`);
       })
       .catch((error) => console.log(error));
@@ -43,8 +61,12 @@ function NewReview(props) {
 
   return (
     <>
-      <div className="d-inline-flex flex-column w-100 p-4">
-        <form onSubmit={addNewReview}>
+      <div className="form-container">
+        <h1>
+          Your review of: <br />
+          {hike.nameOfHike}
+        </h1>
+        <form onSubmit={addNewReview} className="form">
           <label>Name</label>
           <input
             className="form-control mb-4"
@@ -60,6 +82,8 @@ function NewReview(props) {
             type="number"
             placeholder="Stars"
             value={stars}
+            min="1"
+            max="5"
             onChange={handleStars}
           />
 
@@ -77,8 +101,7 @@ function NewReview(props) {
           <label>Posted on</label>
           <input
             className="form-control mb-4"
-            type="text"
-            placeholder="DD.MM.YYYY"
+            type="date"
             value={postedOn}
             onChange={handlePostedOn}
           />
