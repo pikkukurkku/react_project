@@ -7,8 +7,6 @@ import Carousel from "../components/Carousel";
 import "./HikeDeets.css";
 import Reviews from "../components/reviews";
 import Spinner from "../components/Spinner";
-
-// import Reviews from "./reviews"
 import axios from "axios";
 import AccuWeather from "../components/AccuWeather";
 
@@ -17,15 +15,12 @@ function HikeDeets() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [locationKey, setLocationKey] = useState(null);
-  const navigate = useNavigate();
   const { hikeId } = useParams();
   const BE_URL = "https://json-server.adaptable.app/hikes";
 
   const getOneHike = () => {
     axios
-      .get(
-        `${BE_URL}/${hikeId}?_embed=images&_embed=reviews`
-      )
+      .get(`${BE_URL}/${hikeId}?_embed=images&_embed=reviews`)
       .then((response) => {
         console.log(response.data);
         setLoading(false);
@@ -49,7 +44,9 @@ function HikeDeets() {
   return (
     <div className="main">
       <h1>{hike.nameOfHike}</h1>
-      <Carousel />
+      {hike.images && hike.images.length > 0 && (
+        <Carousel />
+      )}
       <div className="HikeCard">
         {hike && (
           <div className="container">
@@ -103,7 +100,9 @@ function HikeDeets() {
           />
         )}
       </div>
-      <div>{locationKey && <AccuWeather locationKey={locationKey} />}</div>
+      {/* <div>
+        {hike.locationKey && <AccuWeather locationKey={hike.locationKey} />}
+      </div> */}
       <div className="userReviews">
         <h2>Reviews</h2>
         <br />
@@ -116,12 +115,6 @@ function HikeDeets() {
       <Link to="/hikes">
         <button className="btn">Back</button>
       </Link>
-
-      {hike.images && hike.images.length > 0 && (
-        <div>
-          <img src={hike.images[0].src} alt="Hike" />
-        </div>
-      )}
     </div>
   );
 }
