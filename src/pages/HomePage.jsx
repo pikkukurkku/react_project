@@ -15,10 +15,11 @@ function HomePage() {
           alt="big-mountain-pic"
           className="big-mountain-pic"
         />
-        <RandomHikes />
-        <Link to="/hikes" className="Linktohikes">
+          <Link to="/hikes" className="Linktohikes">
           <p className="links">See all hikes...</p>
         </Link>
+        <RandomHikes />
+      
       </div>
       {/* <img src="/images/menu-white.avif" alt="big-image-of-mountain"></img> */}
       {/* <AllHikes /> */}
