@@ -1,0 +1,4 @@
+.random-hikes {
+    display: flex;
+    flex-direction: row;
+}

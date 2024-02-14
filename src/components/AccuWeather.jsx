@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Spinner from "../components/Spinner";
+import { Link } from "react-router-dom";
 import axios from "axios";
+import './AccuWeather.css'
 
 function AccuWeather({ locationKey }) {
   const [weather, setWeather] = useState(null);
@@ -37,6 +39,9 @@ function AccuWeather({ locationKey }) {
   return (
     <div>
       <h1>AccuWeather Forecast for this location</h1>
+      <a href="https://www.accuweather.com/" target="_blank" rel="noopener noreferrer" >
+      <img src="../public/images/aw-logo.png" alt="aw-logo"/>
+      </a>
       {weather && (
         <div>
           <h3>{weather.Headline.Text}</h3>

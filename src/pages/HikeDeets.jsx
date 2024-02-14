@@ -56,7 +56,7 @@ function HikeDeets() {
                 {hike.mountainRange}
               </p>
               <p>
-                <b>County:</b> {hike.country}
+                <b>Country:</b> {hike.country}
               </p>
               <p>
                 <b>Start point:</b> {hike.hikeStartPoint}

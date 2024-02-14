@@ -37,7 +37,7 @@ function Carousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       carouselInfiniteScroll();
-    }, 4000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [currentIndex, images]);
 
@@ -51,10 +51,10 @@ function Carousel() {
         return (
           <div
             className="carousel-item"
-            style={{ transform: `translate(-${currentIndex * 100}%)`, width: "100%" }}
+            style={{ transform: `translate(-${currentIndex * 100}%)` }}
             key={index}
           >
-            <img className="carousel-image" src={url} alt={`Slide ${index + 1}`} />
+            <img className="carousel-image" src={url} alt="pic" />
           </div>
         );
       })}

@@ -1,28 +1,27 @@
-
 .big-mountain-pic {
-    width: 57vw;
-    margin-top: 50px;
+  width: 57vw;
+  margin-top: 50px;
 }
 
 .links {
-    font-size: 22px;
-    text-align: center;
-    background-color: #407fca;
-    width: 200px;
-    border-radius: 5px;
-    padding: 10px;
-    color: white;
+  font-size: 22px;
+  text-align: center;
+  background-color: #407fca;
+  width: 200px;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  width: 200px;
 }
 
 .Linktohikes {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .homePage {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(143,54,204,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(143, 54, 204, 0.1);
 }
-

@@ -28,6 +28,6 @@ html {
   width: 100%;
   height: auto; /* Set to auto to maintain aspect ratio */
   object-fit: cover;
-  margin-top: 30vh;
+  margin-top: 20vh;
   margin-left: 0;
 }
