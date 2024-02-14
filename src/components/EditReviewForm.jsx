@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import './EditReviewForm.css'
 
 
 function EditReviewForm(props) {
   const [reviewer, setReviewer] = useState("");
   const [stars, setStars] = useState(0);
   const [reviewText, setReviewText] = useState("");
-  // const [postedOn, setPostedOn] = useState("");
+  const [postedOn, setPostedOn] = useState("");
   const { hikeId, reviewId } = useParams();
   const navigate = useNavigate();
 
@@ -20,6 +21,7 @@ function EditReviewForm(props) {
         setReviewer(reviewData.reviewer);
         setStars(reviewData.stars);
         setReviewText(reviewData.reviewText);
+        setPostedOn(reviewData.postedOn);
       })
       .catch((error) => console.error("Error fetching review data:", error));
   }, [hikeId, reviewId]);
@@ -30,7 +32,8 @@ function EditReviewForm(props) {
     hikeId: Number(hikeId),
       reviewer,
       stars,
-      reviewText
+      reviewText,
+      postedOn,
     };
 
     try {
@@ -41,12 +44,14 @@ function EditReviewForm(props) {
     }
 };
 
-
+const handlePostedOn = (e) => {
+  setPostedOn(e.target.value);
+};
  
 
   return (
       <div className="d-inline-flex flex-column w-100 p-4">
-        <form onSubmit={handleEditReview}>
+        <form className="form" onSubmit={handleEditReview}>
           <label>Name</label>
           <input
             className="form-control mb-4"
@@ -76,14 +81,13 @@ function EditReviewForm(props) {
             onChange={(e) => setReviewText(e.target.value)}
           ></textarea>
 
-          {/* <label>Posted on</label>
+          <label>Posted on</label>
           <input
             className="form-control mb-4"
-            type="text"
-            placeholder="DD.MM.YYYY"
+            type="date"
             value={postedOn}
             onChange={handlePostedOn}
-          /> */}
+          />
 
           <button className="btn btn-primary btn-round">Update</button>
         </form>

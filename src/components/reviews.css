@@ -11,7 +11,7 @@
 
 .editButton:hover,
 .deleteButton:hover {
-  background-color: #952d99; /* Change background color on hover */
+  background-color: #952d99;
 }
 
 .deleteButton {
