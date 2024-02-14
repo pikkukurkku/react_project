@@ -1,28 +1,33 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
 }
 
 .carousel-container {
-    background: #f1f1f1;
-    display: flex;
-    width: 100vw;
-    margin: 0 auto;
-    overflow: hidden;
-    margin-left:
-  }
-  
-  .carousel-item {
-    height: 15rem;
-    min-width: 100%;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 1s cubic-bezier(1, 0.575, 0.565, 1);
-  }
-  
-  .firstPic {
-    width: 100vw;
-    margin: 0;
-  }
+  background: #f1f1f1;
+  display: flex;
+  width: 100vw;
+  height: 75vh; /* Adjust the height to your preference */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-item {
+  min-width: 100%;
+  width: 100vw;
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s cubic-bezier(1, 0.575, 0.565, 1);
+  overflow: hidden;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto; /* Set to auto to maintain aspect ratio */
+  object-fit: cover;
+  margin-top: 20vh;
+  margin-left: 0;
+}

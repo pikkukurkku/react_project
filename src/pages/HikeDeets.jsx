@@ -6,18 +6,16 @@ import Map from "../components/map";
 import Carousel from "../components/Carousel";
 import "./HikeDeets.css";
 import Reviews from "../components/reviews";
-import Spinner from "../components/Spinner"
-
-// import Reviews from "./reviews"
+import Spinner from "../components/Spinner";
 import axios from "axios";
+import AccuWeather from "../components/AccuWeather";
 
 function HikeDeets() {
   const [hike, setHike] = useState({});
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
+  const [locationKey, setLocationKey] = useState(null);
   const { hikeId } = useParams();
-  console.log("anything");
   const BE_URL = "https://json-server.adaptable.app/hikes";
 
   const getOneHike = () => {
@@ -25,15 +23,16 @@ function HikeDeets() {
       .get(`${BE_URL}/${hikeId}?_embed=images&_embed=reviews`)
       .then((response) => {
         console.log(response.data);
-        setLoading(false); 
+        setLoading(false);
         setHike(response.data);
-        setReviews(response.data.reviews || []);   
+        setReviews(response.data.reviews || []);
+        setLocationKey(response.data.locationKey);
       })
       .catch((error) => {
         console.log(error);
-      setLoading(false); 
-  });
-};
+        setLoading(false);
+      });
+  };
 
   useEffect(() => {
     console.log("useEffect");
@@ -45,7 +44,9 @@ function HikeDeets() {
   return (
     <div className="main">
       <h1>{hike.nameOfHike}</h1>
-      <Carousel />
+      {hike.images && hike.images.length > 0 && (
+        <Carousel />
+      )}
       <div className="HikeCard">
         {hike && (
           <div className="container">
@@ -55,7 +56,7 @@ function HikeDeets() {
                 {hike.mountainRange}
               </p>
               <p>
-                <b>County:</b> {hike.country}
+                <b>Country:</b> {hike.country}
               </p>
               <p>
                 <b>Start point:</b> {hike.hikeStartPoint}
@@ -99,6 +100,9 @@ function HikeDeets() {
           />
         )}
       </div>
+      {/* <div>
+        {hike.locationKey && <AccuWeather locationKey={hike.locationKey} />}
+      </div> */}
       <div className="userReviews">
         <h2>Reviews</h2>
         <br />
@@ -111,12 +115,6 @@ function HikeDeets() {
       <Link to="/hikes">
         <button className="btn">Back</button>
       </Link>
-
-      {hike.images && hike.images.length > 0 && (
-        <div>
-          <img src={hike.images[0].src} alt="Hike" />
-        </div>
-      )}
     </div>
   );
 }

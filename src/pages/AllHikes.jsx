@@ -13,7 +13,7 @@ function AllHikes() {
 
   function getAllHikes() {
     axios
-      .get(BE_URL)
+    .get(`${BE_URL}/?_embed=images`)
       .then((response) => {
         setHikes(response.data);
         setLoading(false); 
@@ -40,17 +40,14 @@ function AllHikes() {
             <div key={i}>
             <Link to={`/hikes/${hike.id}`} className="link">
             <div className="oneHike">
+            {hike.images && hike.images.length > 0 && (
+                      <img src={hike.images[0].src} alt={hike.nameOfHike} />
+                    )}
               <p className="name">{hike.nameOfHike}</p>
               <p>Mountain range: {hike.mountainRange}</p>
               <p>County: {hike.country}</p>
-              {/* <p>{hike.hikeStartPoint}</p> */}
-              {/* <p>{hike.time}</p>
-              <p>{hike.distance}</p> */}
               <p>Elevation: {hike.elevation}</p>
               </div>
-              {/* <p>{hike.uphill}</p>
-              <p>{hike.downhill}</p>
-              <p>{hike.description}</p> */}
               </Link>
             </div>
           );

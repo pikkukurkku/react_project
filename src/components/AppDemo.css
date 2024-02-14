@@ -1,0 +1,34 @@
+.main-container {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    justify-content: center;
+    padding-top: 40px
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+    padding: 20px;
+    align-self: center
+}
+
+.text-container p {
+    color:white
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    padding: 0
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+    padding: 0
+  }

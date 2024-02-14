@@ -1,38 +1,61 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import "./Carousel.css";
 
 function Carousel() {
-  const data = ["1", "2", "3", "4"];
-  data[0] = (
-    <img className="firstPic" src="https://i.ibb.co/bg2rpTf/5736-ED3-C-47-D9-474-D-B4-C4-E3-CFE1927941.jpg" />
-  );
+  const [images, setImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const { hikeId } = useParams();
+
+  
+  const BE_URL = "https://json-server.adaptable.app/hikes";
+
+  const fetchImages = () => {
+    axios
+      .get(`${BE_URL}/${hikeId}?_embed=images`)
+      .then((response) => {
+        setImages(response.data.images.map((img) => img.src));
+      })
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    fetchImages();
+  }, [hikeId]);
+
+
   const carouselInfiniteScroll = () => {
-    if (currentIndex === data.length - 1) {
-      return setCurrentIndex(0);
+    if (currentIndex === images.length - 1) {
+      setCurrentIndex(0);
+    } else {
+      setCurrentIndex(currentIndex + 1);
     }
-    return setCurrentIndex(currentIndex + 1);
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
       carouselInfiniteScroll();
-    }, 4000);
+    }, 3000);
     return () => clearInterval(interval);
-  });
+  }, [currentIndex, images]);
+
+  if (images.length === 0) {
+    return <div>Loading...</div>; 
+  }
 
   return (
     <div className="carousel-container">
-      {data.map((item, index) => {
+      {images.map((url, index) => {
         return (
-          <h1
+          <div
             className="carousel-item"
-            style={{ transform: `translate(-${currentIndex * 100}%)`, width: "100%" }}
+            style={{ transform: `translate(-${currentIndex * 100}%)` }}
             key={index}
           >
-            {item}
-          </h1>
+            <img className="carousel-image" src={url} alt="pic" />
+          </div>
         );
       })}
     </div>
@@ -40,54 +63,3 @@ function Carousel() {
 }
 
 export default Carousel;
-
-// import { useState, useEffect } from "react";
-// import "./Carousel.css";
-
-// function Carousel() {
-//   const [data, setData] = useState([]);
-//   const [currentIndex, setCurrentIndex] = useState(0);
-
-//   const carouselInfiniteScroll = () => {
-//     if (currentIndex === data.length - 1) {
-//       return setCurrentIndex(0);
-//     }
-//     return setCurrentIndex(currentIndex + 1);
-//   };
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const response = await fetch("your_mock_backend_url");
-//         const jsonData = await response.json();
-//         setData(jsonData);
-//       } catch (error) {
-//         console.error("Error fetching data:", error);
-//       }
-//     };
-
-//     fetchData();
-
-//     const interval = setInterval(() => {
-//       carouselInfiniteScroll();
-//     }, 4000);
-
-//     return () => clearInterval(interval);
-//   }, [currentIndex]);
-
-//   return (
-//     <div className="carousel-container">
-//       {data.map((imageUrl, index) => (
-//         <img
-//           src={imageUrl}
-//           alt={`Carousel Item ${index + 1}`}
-//           className="carousel-item"
-//           style={{ transform: `translate(-${currentIndex * 100}%)` }}
-//           key={index}
-//         />
-//       ))}
-//     </div>
-//   );
-// }
-
-// export default Carousel;
