@@ -1,0 +1,38 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2;
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+.form-container {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+label {
+    margin-top: 15px
+}
+
+.btn {
+    margin-top: 50px
+}
+
+input {
+    border-radius: 5px;
+    height: 20px;
+border: 1px solid lightgray
+}
+
+textarea {
+    border-radius: 5px;
+    height: 80px;
+    width: 450px;
+border: 1px solid lightgray
+}
