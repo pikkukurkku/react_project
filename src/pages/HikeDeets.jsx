@@ -44,9 +44,7 @@ function HikeDeets() {
   return (
     <div className="main">
       <h1>{hike.nameOfHike}</h1>
-      {hike.images && hike.images.length > 0 && (
-        <Carousel />
-      )}
+      {hike.images && hike.images.length > 0 && <Carousel />}
       <div className="HikeCard">
         {hike && (
           <div className="container">
