@@ -98,9 +98,9 @@ function HikeDeets() {
           />
         )}
       </div>
-      {/* <div>
+      <div>
         {hike.locationKey && <AccuWeather locationKey={hike.locationKey} />}
-      </div> */}
+      </div>
       <div className="userReviews">
         <h2>Reviews</h2>
         <br />

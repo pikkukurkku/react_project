@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useState } from "react";
-import "leaflet/dist/leaflet.css"; // Ensure this import is present to avoid map display issues
+import "leaflet/dist/leaflet.css"; 
 
 function Map( {latitude, longitude }) {
   const position = [latitude, longitude]
