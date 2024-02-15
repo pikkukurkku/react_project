@@ -28,6 +28,10 @@ function AllHikes() {
     getAllHikes();
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (loading) return <Spinner />;
 
   return (

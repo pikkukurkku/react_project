@@ -1,4 +1,5 @@
 import "./Footer.css"
+import { Link } from "react-router-dom";
 
 function Footer () {
     return (
@@ -8,6 +9,9 @@ function Footer () {
             <p>Contact us</p>
             <p>Jobs</p>
             <p>Join the community</p>
+            <Link to="/aboutme" className="link">
+            <p>Meet the developer</p>
+            </Link>
             </section>
             <section className="environment">
             <h3>There is no planet B</h3>

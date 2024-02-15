@@ -41,6 +41,7 @@ function HikeDeets() {
 
   if (loading) return <Spinner />;
 
+
   return (
     <div className="main">
       <h1>{hike.nameOfHike}</h1>

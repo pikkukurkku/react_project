@@ -9,10 +9,19 @@ function EditReviewForm(props) {
   const [stars, setStars] = useState(0);
   const [reviewText, setReviewText] = useState("");
   const [postedOn, setPostedOn] = useState("");
+  const [hike, setHike] = useState({});
   const { hikeId, reviewId } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
+
+    axios
+      .get(`https://json-server.adaptable.app/hikes/${hikeId}`)
+      .then((response) => {
+        setHike(response.data);
+      })
+      .catch((error) => console.error("Error fetching hike data:", error));
+
     axios
       .get(`https://json-server.adaptable.app/reviews/${reviewId}`)
       .then((response) => {
@@ -25,6 +34,10 @@ function EditReviewForm(props) {
       })
       .catch((error) => console.error("Error fetching review data:", error));
   }, [hikeId, reviewId]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleEditReview = async (event) => {
     event.preventDefault();
@@ -47,10 +60,17 @@ function EditReviewForm(props) {
 const handlePostedOn = (e) => {
   setPostedOn(e.target.value);
 };
+
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
  
 
   return (
       <div className="d-inline-flex flex-column w-100 p-4">
+      <h1>
+          Edit your review of: {hike.nameOfHike}
+        </h1>
         <form className="form" onSubmit={handleEditReview}>
           <label>Name</label>
           <input

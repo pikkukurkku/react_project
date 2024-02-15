@@ -3,9 +3,15 @@ import AppOfTheYear from "../components/AppOfTheYear";
 import { Link } from "react-router-dom";
 import AppDemo from "../components/AppDemo";
 import RandomHikes from "../components/RandomHikes";
+import { useEffect } from "react";
+
 
 function HomePage() {
-  console.log("Hello from the Homepage");
+ 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
 
@@ -19,7 +25,6 @@ function HomePage() {
           <p className="links">See all hikes...</p>
         </Link>
         <RandomHikes />
-      
       </div>
       <AppDemo />
       <AppOfTheYear/>

@@ -23,7 +23,7 @@
 .data {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 95%;
   text-align: center;
   word-spacing: 5px;
   border: 2px solid #711eaa;

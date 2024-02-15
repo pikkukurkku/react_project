@@ -3,10 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "./NewReview.css";
 
-// const BE_URL = "https://json-server.adaptable.app/hikes";
-
 function NewReview(props) {
-  // State variables to store the values of the form inputs. You can leave these as they are.
   const [reviewer, setReviewer] = useState("");
   const [stars, setStars] = useState(0);
   const [reviewText, setReviewText] = useState("");
@@ -23,6 +20,11 @@ function NewReview(props) {
       })
       .catch((error) => console.log(error));
   }, [hikeId]);
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleReviewer = (e) => setReviewer(e.target.value);
   const handleStars = (e) => setStars(e.target.value);
