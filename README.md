@@ -1,8 +1,45 @@
-# React + Vite
+# Hikelove
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hikelove is a simple web application, created using React.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Deployment](#deployment)
+- [Local Development](#local-development)
+- [APIs Used](#apis-used)
+
+## Introduction
+
+The main objectives were to use React, a mock backend and to create a web application with CRUD functionalities.
+
+## Features
+
+- CRUD functions for reviews - some reviews are pre-rendered from the mock backened. However, it is also possible to add a review, edit it and delete it.
+- image carousel - credits go to Aaakash Jha [(https://blog.bitsrc.io/simple-carousel-in-react-2aac73887243)]
+- integration with AccuWeather API and OpenStreetMap API
+
+## Technologies
+
+- React
+- Vite
+- Axios
+- node.js
+
+## Deployment
+
+Deployed on GitHub Pages.
+Link: 
+
+## Local Development
+
+To set up the project locally for development purposes:
+
+```bash
+# Installation
+npm install
+
+# Run the development server
+npm run dev
