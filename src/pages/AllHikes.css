@@ -1,29 +1,47 @@
+.all-hikes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 0 15px;
+  margin-top: 30px;
+}
+
 .oneHike {
   border: 1px solid blue;
   border-radius: 10px;
   background-color: beige;
-  width: 300px;
-  margin: 30px 20px;
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   text-align: left;
-  text-decoration: none;
-  padding: 10px 25px;
-  font-size: 18px;
-}
-
-.all-hikes {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-top: 30px;
+  overflow: hidden;
+  margin: 5px; /* Add 5px margin around each .oneHike div */
 }
 
 .name {
   font-size: 20px;
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .link {
   text-decoration: none;
+}
+
+.hike-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  padding: 10px;
+  line-height: 0.2;
 }

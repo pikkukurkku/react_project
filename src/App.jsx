@@ -6,7 +6,7 @@ import AllHikes from "./pages/AllHikes";
 import HikeDeets from "./pages/HikeDeets";
 import Footer from "./components/Footer";
 import NewReview from "./pages/NewReview";
-import { BrowserRouter as Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import EditReviewForm from "./components/EditReviewForm";
 

@@ -32,8 +32,10 @@ function AllHikes() {
 
   return (
     <>
+     <div className="Heading">
+    <h1>Browse all hikes</h1>
+    </div>
     <div className="all-hikes">
-     
       {hikes &&
         hikes.map((hike, i) => {
           return (
@@ -41,7 +43,7 @@ function AllHikes() {
             <Link to={`/hikes/${hike.id}`} className="link">
             <div className="oneHike">
             {hike.images && hike.images.length > 0 && (
-                      <img src={hike.images[0].src} alt={hike.nameOfHike} />
+                      <img src={hike.images[0].src} alt={hike.nameOfHike} className="hike-image" />
                     )}
               <p className="name">{hike.nameOfHike}</p>
               <p>Mountain range: {hike.mountainRange}</p>
