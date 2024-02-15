@@ -2,6 +2,8 @@
 
 Hikelove is a simple web application, created using React.
 
+![Hikelove](./public/iframe.png)
+
 ## Table of Contents
 
 - [Introduction](#introduction)
