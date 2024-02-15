@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import './reviews.css'
+import './Reviews.css'
 
 function Reviews({ reviews: reviewsProp }) {
   const [reviews, setReviews] = useState([]);

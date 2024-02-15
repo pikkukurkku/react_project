@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import './RandomHikes.css'
 
+
 const BE_URL = "https://json-server.adaptable.app/hikes";
 
 function RandomHikes() {
@@ -26,18 +27,18 @@ function RandomHikes() {
     };
 
     getRandomHikes();
-  }, []); // Empty dependency array means this effect runs once on component mount
+  }, []); 
 
   if (loading) return <p>Loading random hikes...</p>;
 
   return (
-    <div className="random-hikes">
+    <div className="all-hikes">
       {randomHikes.map((hike, index) => (
         <div key={index}>
           <Link to={`/hikes/${hike.id}`} className="link">
             <div className="oneHike">
               {hike.images && hike.images.length > 0 && (
-                <img src={hike.images[0].src} alt={hike.nameOfHike} />
+                <img src={hike.images[0].src} alt={hike.nameOfHike} className="hike-image"/>
               )}
               <p className="name">{hike.nameOfHike}</p>
               <p>Mountain range: {hike.mountainRange}</p>

@@ -10,7 +10,7 @@ function AppDemo () {
             <p>Location shown on map</p>
             </section>
             <section className="image-container">
-            <img src="../public/images/iframe.png" alt="mockiPhone" />
+            <img src="../public/iframe.png" alt="mockiPhone" />
             </section>
         </div>
     )

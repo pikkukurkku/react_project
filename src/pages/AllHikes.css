@@ -18,7 +18,7 @@
   justify-content: space-between;
   text-align: left;
   overflow: hidden;
-  margin: 5px; /* Add 5px margin around each .oneHike div */
+  margin: 5px;
 }
 
 .name {
