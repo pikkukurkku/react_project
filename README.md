@@ -24,9 +24,19 @@ The main objectives were to use React, a mock backend and to create a web applic
 ## Technologies
 
 - React
+- JavaScript (ES6)
+- HTML/CSS
 - Vite
 - Axios
-- node.js
+- Node.js and nppm
+- Git and GitHub
+- Adaptable
+- React Router
+- JSX
+- Babel
+- ESLint
+- Prettier
+
 
 ## Deployment
 
