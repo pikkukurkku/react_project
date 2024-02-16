@@ -17,6 +17,8 @@ Hikelove is a simple web application, created using React.
 
 The main objectives were to use React, a mock backend and to create a web application with CRUD functionalities.
 
+- [presentation slides](https://docs.google.com/presentation/d/1F-kHrW5AczjasIT3nruo4KDeuP5JtwIp3Yiv9CvE-k4/edit#slide=id.g1f88252dc4_0_1535)
+
 ## Features
 
 - CRUD functions for reviews - some reviews are pre-rendered from the mock backened. However, it is also possible to add a review, edit it and delete it.
