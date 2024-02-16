@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <Link to="/">
-        <img src="../HikeLove.webp" alt="hiking-logo" className="logo" />
+        <img src="./HikeLove.webp" alt="hiking-logo" className="logo" />
       </Link>
       <div className="right">
         <p className="help">Help</p>
