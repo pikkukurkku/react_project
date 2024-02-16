@@ -44,8 +44,8 @@ The main objectives were to use React, a mock backend and to create a web applic
 
 ## Deployment
 
-Deployed on GitHub Pages.
-Link: 
+Deployed on GitHub Pages -->
+[click here](https://pikkukurkku.github.io/react_project/#/)
 
 ## Local Development
 
