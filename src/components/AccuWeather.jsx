@@ -40,7 +40,7 @@ function AccuWeather({ locationKey }) {
     <div>
       <h1>AccuWeather Forecast for this location</h1>
       <a href="https://www.accuweather.com/" target="_blank" rel="noopener noreferrer" >
-      <img src="../aw-logo.png" alt="aw-logo"/>
+      <img src="./aw-logo.png" alt="aw-logo"/>
       </a>
       {weather && (
         <div>

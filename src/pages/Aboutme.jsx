@@ -13,7 +13,7 @@ function Aboutme() {
     <div className="aboutme">
       <h1>Hello there!</h1>
       <h2>My name is Natalia</h2>
-      <img src="../me.JPG" alt="happy-face" className="me"/>
+      <img src="./me.JPG" alt="happy-face" className="me"/>
       <h4>This is me doing what I love!!!</h4>
       <br />
       <article>
