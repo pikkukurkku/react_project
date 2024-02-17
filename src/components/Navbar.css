@@ -1,20 +1,20 @@
 .navbar {
-  display: flex; 
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
   align-items: center;
   background-color: #8f36cc;
   color: white;
-  position: relative; 
+  position: relative;
   padding: 10px 0 10px 0;
 }
 
 .right {
-  display: flex; 
+  display: flex;
   flex-direction: row;
   margin-right: 80px;
   font-size: 18px;
   position: absolute;
-right: 55px
+  right: 55px;
 }
 
 .logo {
@@ -30,3 +30,12 @@ right: 55px
   margin-right: 40px;
 }
 
+@media screen and (max-width: 760px) {
+  .navbar {
+    width: 100vw;
+    display: flex;
+  }
+  .right {
+    display: none
+  }
+}

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Spinner from "../components/Spinner";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import './AccuWeather.css'
+import "./AccuWeather.css";
 
 function AccuWeather({ locationKey }) {
   const [weather, setWeather] = useState(null);
@@ -12,7 +12,9 @@ function AccuWeather({ locationKey }) {
     const getWeather = () => {
       axios
         .get(
-          `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${locationKey}?apikey=SS7lIBwntX2mwADj0HCQfkDxr4siSQHo`
+          `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${locationKey}?apikey=${
+            import.meta.env.VITE_ACCU_KEY
+          }`
         )
         .then((response) => {
           console.log(response.data);
@@ -39,8 +41,12 @@ function AccuWeather({ locationKey }) {
   return (
     <div>
       <h1>AccuWeather Forecast for this location</h1>
-      <a href="https://www.accuweather.com/" target="_blank" rel="noopener noreferrer" >
-      <img src="./aw-logo.png" alt="aw-logo"/>
+      <a
+        href="https://www.accuweather.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="./aw-logo.png" alt="aw-logo" />
       </a>
       {weather && (
         <div>
