@@ -36,12 +36,13 @@
 
   @media screen and (max-width: 760px) {
     .main-container {
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .text-container {
-        font-size: medium; 
+        font-size: 18px;
         text-align: center; 
         padding: 10px; 
         align-self: center;
@@ -54,5 +55,9 @@
     .image-container img {
         width: 100%; 
         height: auto; 
+    }
+
+    .free {
+        line-height: 3;
     }
 }

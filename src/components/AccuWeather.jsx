@@ -39,7 +39,7 @@ function AccuWeather({ locationKey }) {
   if (loading) return <Spinner />;
 
   return (
-    <div>
+    <div className="forecast">
       <h1>AccuWeather Forecast for this location</h1>
       <a
         href="https://www.accuweather.com/"

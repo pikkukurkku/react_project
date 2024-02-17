@@ -25,3 +25,15 @@
   align-items: center;
   background-color: rgb(143, 54, 204, 0.1);
 }
+
+@media screen and (max-width: 760px) {
+  .big-mountain-pic{
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 22px
+  }
+
+  .links {
+    font-size: 18px;
+  }
+}

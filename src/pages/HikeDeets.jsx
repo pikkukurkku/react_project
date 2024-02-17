@@ -57,7 +57,7 @@ function HikeDeets() {
               <p>
                 <b>Country:</b> {hike.country}
               </p>
-              <p>
+              <p className="startPoint">
                 <b>Start point:</b> {hike.hikeStartPoint}
               </p>
               <div className="data">

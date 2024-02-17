@@ -1,3 +1,11 @@
 img {
     width: 290px
 }
+
+
+@media screen and (max-width: 760px) {
+.forecast {
+    margin-top: 85px;
+    padding: 0 5px;
+}
+}
