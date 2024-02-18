@@ -1,5 +1,4 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { useState } from "react";
 import "leaflet/dist/leaflet.css"; 
 
 function Map( {latitude, longitude }) {

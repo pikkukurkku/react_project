@@ -14,10 +14,20 @@
   background-color: #952d99;
 }
 
+.reviewText {
+    line-height: 1;
+}
+
 .deleteButton {
     width: 160px
 }
 
 .editButton {
     width: 60px
+}
+
+@media screen and (max-width: 760px) {
+    .reviewText {
+        line-height: 2;
+    }
 }
