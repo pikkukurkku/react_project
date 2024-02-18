@@ -8,7 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 5px;
+ 
   margin-top: 30px;
 }
 
@@ -31,7 +31,7 @@ body {
   font-weight: bold;
   overflow: hidden;
   word-wrap: break-word;
-  line-height: 1.5; /* Allow text to wrap onto the next line */
+  line-height:1.5; /* Allow text to wrap onto the next line */
 }
 
 
@@ -60,9 +60,7 @@ p {
     word-wrap: break-word; 
   }
 
-  .range {
-    line-height: 2;
-  }
+  
 
   .oneHike {
     box-sizing: border-box;

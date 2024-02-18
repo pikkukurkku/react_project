@@ -41,7 +41,7 @@ function RandomHikes() {
                 <img src={hike.images[0].src} alt={hike.nameOfHike} className="hike-image"/>
               )}
               <p className="name">{hike.nameOfHike}</p>
-              <p>Mountain range: {hike.mountainRange}</p>
+              <p className="range">Mountain range: {hike.mountainRange}</p>
               <p>County: {hike.country}</p>
               <p>Elevation: {hike.elevation}</p>
             </div>

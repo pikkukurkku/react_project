@@ -12,7 +12,7 @@
   justify-content: space-between;
   text-align: left;
   overflow: hidden;
-  margin: 5px;
+ margin-bottom: 8px;
 }
 
 .hike-image {
@@ -45,5 +45,9 @@ p {
       width: 100vw; 
       box-sizing: border-box;
     
+
+      .range {
+    line-height: 2;
+  }
     } 
 }

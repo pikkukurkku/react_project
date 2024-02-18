@@ -112,7 +112,9 @@ h1 {
     line-height: 2;
   }
 
-
+  .range {
+    line-height: 2;
+  }
   
 .text {
   box-sizing: border-box;
