@@ -50,7 +50,7 @@ function HikeDeets() {
         {hike && (
           <div className="container">
             <div className="text">
-              <p>
+              <p className="range">
                 <b>Mountain range: </b>
                 {hike.mountainRange}
               </p>

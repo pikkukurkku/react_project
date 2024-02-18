@@ -23,3 +23,4 @@ function Map( {latitude, longitude }) {
 }
 
 export default Map;
+

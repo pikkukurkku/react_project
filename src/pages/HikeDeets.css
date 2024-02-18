@@ -31,7 +31,6 @@ body {
   text-align: center;
   word-spacing: 5px;
   border: 2px solid #711eaa;
-  padding: 1px 25px;
   border-radius: 6px;
   margin-top: 20px;
 }
@@ -112,4 +111,18 @@ h1 {
   .startPoint {
     line-height: 2;
   }
+
+
+  
+.text {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+  border: 4px solid #711eaa;
+  border-radius: 6px;
+  line-height: 0.5;
+ 
+}
 }
