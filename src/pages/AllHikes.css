@@ -22,8 +22,8 @@ body {
   justify-content: space-between;
   text-align: left;
   overflow: hidden;
-  margin: 0;
   padding: 0;
+  margin-left: 10px
 }
 
 .name {
@@ -37,6 +37,7 @@ body {
 
 .link {
   text-decoration: none;
+  
 }
 
 .hike-image {
@@ -65,6 +66,7 @@ p {
   .oneHike {
     box-sizing: border-box;
     width: 100%; 
+    margin-left: 0
   }
 
   .all-hikes {
