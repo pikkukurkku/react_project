@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Map from "../components/Map";
+import Map from "../components/map";
 import Carousel from "../components/Carousel";
 import "./HikeDeets.css";
 import Reviews from "../components/Reviews";
