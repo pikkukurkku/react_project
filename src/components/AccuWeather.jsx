@@ -12,7 +12,7 @@ function AccuWeather({ locationKey }) {
     const getWeather = () => {
       axios
         .get(
-          `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${locationKey}?apikey=${
+          `https://dataservice.accuweather.com/forecasts/v1/daily/1day/${locationKey}?apikey=${
             import.meta.env.VITE_ACCU_KEY
           }`
         )
