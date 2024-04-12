@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import './RandomHikes.css'
-
+import "./RandomHikes.css";
 
 const BE_URL = "https://json-server.adaptable.app/hikes";
 
@@ -27,7 +26,7 @@ function RandomHikes() {
     };
 
     getRandomHikes();
-  }, []); 
+  }, []);
 
   if (loading) return <p>Loading random hikes...</p>;
 
@@ -38,7 +37,11 @@ function RandomHikes() {
           <Link to={`/hikes/${hike.id}`} className="link">
             <div className="oneHike">
               {hike.images && hike.images.length > 0 && (
-                <img src={hike.images[0].src} alt={hike.nameOfHike} className="hike-image"/>
+                <img
+                  src={hike.images[0].src}
+                  alt={hike.nameOfHike}
+                  className="hike-image"
+                />
               )}
               <p className="name">{hike.nameOfHike}</p>
               <p className="range">Mountain range: {hike.mountainRange}</p>
