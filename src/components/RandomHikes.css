@@ -12,7 +12,7 @@
   justify-content: space-between;
   text-align: left;
   overflow: hidden;
- margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .hike-image {
@@ -22,7 +22,6 @@
   object-fit: cover;
   margin: 0;
   padding: 0;
- 
 }
 
 .all-hikes {
@@ -32,16 +31,14 @@
 
 p {
   padding: 10px;
-  line-height: 1.5; 
+  line-height: 1.5;
 }
-
-
 
 @media screen and (max-width: 760px) {
   .name {
     font-size: 16px;
   }
- 
+
   .all-hikes {
     width: 90vw;
     margin: 35px;
@@ -49,8 +46,7 @@ p {
     text-align: center;
   }
 
-
-   .range {
-  line-height: 2;
+  .range {
+    line-height: 2;
   }
-    } 
+}
