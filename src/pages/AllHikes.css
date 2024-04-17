@@ -6,46 +6,40 @@ body {
 .all-hikes {
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 20px; 
   flex-wrap: wrap;
- 
   margin-top: 30px;
 }
 
 .oneHike {
+  width: 300px; 
   border: 1px solid blue;
   border-radius: 10px;
   background-color: beige;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: left;
-  overflow: hidden;
-  padding: 0;
-  margin-left: 10px
+  margin: 10px; 
+  padding: 10px;
+  
 }
 
 .name {
   font-size: 20px;
   font-weight: bold;
-  overflow: hidden;
-  word-wrap: break-word;
-  line-height:1.5; /* Allow text to wrap onto the next line */
 }
 
+.range, .name {
+  overflow: hidden;
+  word-wrap: break-word;
+  line-height:1.5; 
+}
 
 .link {
-  text-decoration: none;
-  
+  text-decoration: none; 
 }
 
 .hike-image {
   width: 100%;
   height: 150px;
   object-fit: cover;
-  margin: 0;
-  padding: 0;
 }
 
 p {
@@ -61,17 +55,13 @@ p {
     word-wrap: break-word; 
   }
 
-  
-
-  .oneHike {
-    box-sizing: border-box;
-    width: 100%; 
-    margin-left: 0
-  }
-
   .all-hikes {
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    width: 100vw
   }
+
 }

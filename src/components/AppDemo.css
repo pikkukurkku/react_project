@@ -46,6 +46,7 @@
         text-align: center; 
         padding: 10px; 
         align-self: center;
+        font-size: 15px;
     }
 
     .image-container {
@@ -58,6 +59,10 @@
     }
 
     .free {
-        line-height: 3;
+        line-height: 3; 
+    }
+
+    h2 {
+        font-size: 18px;
     }
 }

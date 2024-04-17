@@ -38,4 +38,9 @@
   .right {
     display: none
   }
+
+  .logo {
+    width: 140px;
+    
+  }
 }
