@@ -2,7 +2,7 @@
 
 Hikelove is a simple web application, created using React.
 
-![Hikelove](./public/earnit-pocketmentor.png)
+![Hikelove](./public/iframe.png)
 
 ## Table of Contents
 
@@ -10,8 +10,9 @@ Hikelove is a simple web application, created using React.
 - [Features](#features)
 - [Technologies](#technologies)
 - [Deployment](#deployment)
+- [APIs used](#apis-used)
 - [Local Development](#local-development)
-- [APIs Used](#apis-used)
+
 
 ## Introduction
 
@@ -32,7 +33,7 @@ The main objectives were to use React, a mock backend and to create a web applic
 - HTML/CSS
 - Vite
 - Axios
-- Node.js and nppm
+- Node.js and npm
 - Git and GitHub
 - Adaptable
 - React Router
@@ -46,6 +47,14 @@ The main objectives were to use React, a mock backend and to create a web applic
 
 Deployed on GitHub Pages -->
 [click here](https://pikkukurkku.github.io/react_project/#/)
+
+The API (json server) is deployed on Adaptable -->
+[click here](https://json-server.adaptable.app/)
+
+## APIs used
+[AccuWeater APIs](https://developer.accuweather.com/)
+
+[OpenStreetMap/Leaflet](https://leafletjs.com/)
 
 ## Local Development
 
