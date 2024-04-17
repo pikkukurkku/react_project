@@ -17,27 +17,27 @@ h1, h2, h3 {
 
 @media screen and (max-width: 760px) {
     h1 {
-        font-size: 24px; /* Adjust font size for h1 on mobile */
+        font-size: 22px; 
     }
 
     h2 {
-        font-size: 20px; /* Adjust font size for h2 on mobile */
+        font-size: 16px; 
     }
 
     h3 {
-        font-size: 16px; /* Adjust font size for h3 on mobile */
+        font-size: 16px; 
     }
 
     .hiking-logo {
-        width: 100%; /* Make the logo take full width on mobile */
+        width: 100%; 
     }
 
     .AppOfTheYear {
-        margin-top: 80px; /* Adjust margin for AppOfTheYear on mobile */
+        margin-top: 80px; 
     }
 
     .AppOfTheYear img {
-        width: 120px; /* Adjust image size for AppOfTheYear on mobile */
-        margin-left: 10px; /* Adjust margin for AppOfTheYear image on mobile */
+        width: 100px; 
+        margin-left: 10px; 
     }
 }
